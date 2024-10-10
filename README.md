@@ -1,50 +1,30 @@
-# React + TypeScript + Vite
+# LEC Online Judge FE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Lec oj(fe) 是由 HOJ 改造而来的
 
-Currently, two official plugins are available:
+## What we do
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. 将 `vue2` 前端项目迁移转变为 `react18` 前端项目
+2. 优化代码结构，提升代码质量
+3. 当前技术选型决策：
+  - `react18`
+  - `zustand`
+  - `less`
+4. 愿景: 同步支持 `HOJ` 所有功能， 同时拓展 lec 独有功能 
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Start
 
-- Configure the top-level `parserOptions` property like this:
+```bash
+# 拉取项目 
+git clone https://github.com/Apries406/lecoj.git
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+# 安装依赖
+cd lecoj
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+# only pnpm
+pnpm i
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+# 启动项目
+pnpm dev
 ```
