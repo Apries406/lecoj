@@ -1,6 +1,6 @@
 const Home = () => {
     return (
-        <div>Home</div>
+        <div style={{ height: '300vh', width: '100vw', }}>Home</div>
     )
 }
 
