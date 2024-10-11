@@ -1,45 +1,28 @@
-import { Col, FloatButton, Row } from 'antd'
+import { useRoutes } from 'react-router-dom'
+
+import { ojRoutes } from './router/ojRoutes'
+
+import { FloatButton } from 'antd'
+
 import '@/styles/app.less'
-import { Outlet } from 'react-router-dom'
-import IF from '@/components/IF'
+import HeaderBar from '@/common/HeaderBar'
+
 
 function App() {
-
-  const isAdminView = false
-  const showFooter = true
-
+  const router = useRoutes(ojRoutes)
   return (
     <>
-      <IF tif={!isAdminView}>
-        {/* 如果是一般用户 */}
-        <IF.If>
-          <div className="user-content full-height flex-column">
-            <div id="oj-content">
-              <Outlet />
-            </div>
-            {/* 需要显示页脚 */}
-            <IF tif={showFooter}>
-              <footer className='fix-to-bottom'>
-                <div className="mundb-footer">
-                  <Row>
-                    <Col md={6} xs={24}>
-                      <h1>LEC ORG</h1>
-                      <span></span>
-                    </Col>
-                  </Row>
-                </div>
-              </footer>
-            </IF>
-          </div>
-        </IF.If>
-        {/* 如果是管理员 */}
-        <IF.Else>
-          <div className="admin-content"></div>
-        </IF.Else>
-      </IF>
+      <FloatButton.BackTop visibilityHeight={50} />
 
-
-      <FloatButton.BackTop />
+      <header className='header-bar'>
+        <HeaderBar />
+      </header>
+      <main className='oj-content'>
+        {router}
+      </main>
+      <footer className='footer-bar fix-to-bottom'>
+        All rights reserved.
+      </footer>
     </>
   )
 }

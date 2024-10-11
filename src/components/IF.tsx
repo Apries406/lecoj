@@ -2,15 +2,15 @@ import { Children, FC, PropsWithChildren, ReactElement } from 'react';
 
 interface IIFProps {
     tif: boolean
-    children: ReactElement[] | ReactElement | string | null
+    children: ReactElement[] | ReactElement | string | null | undefined
 }
 
-const If: FC<IIFProps> & { If: FC<PropsWithChildren<{}>>; Else: FC<PropsWithChildren<{}>> } = ({
+const IF: FC<IIFProps> & { If: FC<PropsWithChildren<{}>>; Else: FC<PropsWithChildren<{}>> } = ({
     tif,
     children,
 }) => {
-    let ifChild = null;
-    let elseChild = null;
+    let ifChild: ReactElement | null = null;
+    let elseChild: ReactElement | null = null;
 
     /* 如果没有children，则直接返回null */
     if (!children) return null;
@@ -21,10 +21,10 @@ const If: FC<IIFProps> & { If: FC<PropsWithChildren<{}>>; Else: FC<PropsWithChil
 
     /* 如果children 是数组，则遍历数组，找出 if 和 else 类型 */
     Children.forEach(children, child => {
-        if (child.type === If.If) {
+        if (child.type === IF.If) {
             ifChild = child;
         }
-        if (child.type === If.Else) {
+        if (child.type === IF.Else) {
             elseChild = child;
         }
     });
@@ -32,7 +32,7 @@ const If: FC<IIFProps> & { If: FC<PropsWithChildren<{}>>; Else: FC<PropsWithChil
     return tif ? ifChild : elseChild;
 };
 
-If.If = ({ children }: PropsWithChildren<{}>) => <>{children}</>;
-If.Else = ({ children }: PropsWithChildren<{}>) => <>{children}</>;
+IF.If = ({ children }) => <>{children}</>;
+IF.Else = ({ children }) => <>{children}</>;
 
-export default If;
+export default IF;

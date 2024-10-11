@@ -32,7 +32,8 @@
       "@/router/*": ["src/router/*"],
       "@/store/*": ["src/store/*"],
       "@/views/*": ["src/views/*"],
-      "@/styles/*": ["src/styles/*"]
+      "@/styles/*": ["src/styles/*"],
+      "@/constants/*": ["src/constants/*"],
     },
   },
   "include": ["src"]

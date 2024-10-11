@@ -1,7 +1,7 @@
 const ProblemList = () => {
-  return (
-    <div>ProblemList</div>
-  )
+    return (
+        <div>ProblemList</div>
+    )
 }
 
 export default ProblemList

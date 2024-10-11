@@ -1,7 +1,7 @@
 const DiscussionList = () => {
-  return (
-    <div>DiscussionList</div>
-  )
+    return (
+        <div>DiscussionList</div>
+    )
 }
 
 export default DiscussionList
