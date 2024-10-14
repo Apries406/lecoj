@@ -4,7 +4,7 @@ import { RouterProvider } from 'react-router-dom'
 
 import { ojRouter } from '@/router/ojRoutes.tsx'
 
-import "./styles/main.less"
+import "./styles/root.less"
 import './styles/utils.less'
 
 createRoot(document.getElementById('root')!).render(

@@ -15,6 +15,19 @@
 
 ## Start
 
+### Before Start (versions)
+```bash
+node -v
+# v21.0.0
+
+npm -v
+# 10.2.0
+
+pnpm -v
+# 9.11.0
+```
+
+### Departure
 ```bash
 # 拉取项目 
 git clone https://github.com/Apries406/lecoj.git

@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom'
 import { FloatButton } from 'antd'
 
 import HeaderBar from '@/common/HeaderBar'
-import '@/styles/app.less'
+import '@/styles/main.less'
 
 
 function Layout() {
