@@ -9,9 +9,9 @@ export const headerNav: MenuItem[] = [
         label: '首页',
         path: '/',
     }, {
-        key: 'problem',
+        key: 'problem/list',
         label: '题库',
-        path: '/problem',
+        path: '/problem/list',
     }, {
         key: 'training',
         label: '题单',

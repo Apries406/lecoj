@@ -6,7 +6,7 @@ const HeaderBar = () => {
     const navigator = useNavigate()
     const onMenuClick = (e: any) => {
         console.log(e)
-        navigator(e.path)
+        navigator(e.key)
     }
     return (
         <Menu mode="horizontal" onClick={onMenuClick} items={headerNav} />
